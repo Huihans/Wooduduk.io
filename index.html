@@ -225,7 +225,7 @@
   <h2 class="sh">Problem Solving</h2><div class="st">증상이 아니라 원인에서 끝냅니다</div>
   <div class="tb">
     <h3>🐛 고스트가 호스트로 뽑혀 멀티가 시작되지 않던 버그 <span style="font-size:12px;color:var(--tx2);font-weight:400">· 우드득</span></h3>
-    <div class="step"><div class="k">상황</div><div class="v">특정 사람만 멀티가 시작되지 않고 무한 대기. <b>재현이 불규칙</b>했습니다.</div></div>
+    <div class="step"><div class="k">상황</div><div class="v">특정 계정만 멀티가 시작되지 않고 무한 대기. <b>재현이 불규칙</b>했습니다.</div></div>
     <div class="step"><div class="k">추적</div><div class="v">로그를 붙여 추적 → 호스트를 ‘접속자 중 가장 작은 uid’로 뽑는데, 정원을 채우려 넣은 <b>AI 대역(고스트)</b>이 후보에 섞여 있었습니다.</div></div>
     <div class="step"><div class="k">원인</div><div class="v">실제 유저 uid가 사전순으로 고스트보다 뒤면 고스트가 호스트로 뽑히고, 고스트는 <b>시작 시각을 기록하지 않아</b> 나머지가 영원히 대기.</div></div>
     <div class="step"><div class="k">해결</div><div class="v">증상 우회 대신 <b>선출에서 고스트를 제외</b>하고 ‘실유저 없는 방은 파기’ 안전망 추가 → uid 순서에 좌우되던 현상이 완전히 사라짐.</div></div>
