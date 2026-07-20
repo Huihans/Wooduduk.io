@@ -140,7 +140,7 @@
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <span class="tag">모바일 RTS / MMORPG 클라이언트 프로그래머 · 신입</span>
+  <span class="tag">게임 클라이언트 프로그래머 · 신입</span>
   <h1>문제를 <span class="g">원인</span>에서<br>끝내는 개발자</h1>
   <p class="lead">Unity와 C#로 게임 클라이언트를 만드는 신입입니다. 전용 서버 없이 <b>Firebase만으로 최대 4인 실시간 대전</b>을 직접 구현했고, 재현이 어려운 버그는 <b>근본 원인까지 추적해</b> 해결합니다.</p>
   <div class="cta">
@@ -163,7 +163,7 @@
     <div class="tier"><h4>사용 경험 · Used</h4>
       <div class="sk"><span class="ico"><img src="assets/icons/pad.svg" alt=""></span><span class="skn">PlayFab<b>써드파티 SDK 연동</b></span></div>
       <div class="sk"><span class="ico"><img src="assets/icons/google.svg" alt=""></span><span class="skn">Apps Script 파이프라인<b>Sheets 파싱·검증</b></span></div>
-      <div class="sk"><span class="ico"><img src="assets/icons/check.svg" alt=""></span><span class="skn">EditMode 테스트<b>단위 검증</b></span></div>
+      <div class="sk"><span class="ico"><img src="assets/icons/check.svg" alt=""></span><span class="skn">자동 검증 체계<b>EditMode · 검증 도구 직접 구축</b></span></div>
     </div>
     <div class="tier"><h4>협업 · Tools</h4>
       <div class="sk"><span class="ico"><img src="assets/icons/branch.svg" alt=""></span><span class="skn">UVCS<b>브랜치·머지 협업</b></span></div>
@@ -171,7 +171,7 @@
       <div class="sk"><span class="ico"><img src="assets/icons/git.svg" alt=""></span><span class="skn">Git<b>버전 관리</b></span></div>
     </div>
   </div>
-  <div style="margin-top:14px;color:var(--tx2);font-size:13.5px">설계 강점 · <b style="color:var(--tx)">이벤트버스 모듈화</b> · <b style="color:var(--tx)">인터페이스 경계 설계</b> · <b style="color:var(--tx)">ScriptableObject 데이터 구동</b></div>
+  <div style="margin-top:14px;color:var(--tx2);font-size:13.5px">설계 강점 · <b style="color:var(--tx)">훅 기반 확장</b>(코어 수정 없이 콘텐츠 추가) · <b style="color:var(--tx)">이벤트버스 모듈화</b> · <b style="color:var(--tx)">인터페이스 경계 설계</b> · <b style="color:var(--tx)">ScriptableObject 데이터 구동</b></div>
 </div></section>
 
 <section id="projects"><div class="wrap">
@@ -180,14 +180,16 @@
 
   <div class="proj main">
     <img class="pthumb" src="assets/proj_wd.jpg" alt="우드득 인게임 화면">
-    <div class="pt"><h3>우드득 (Wooduduk)</h3><span class="per">2026.06 ~ 07 · 팀 6명</span><span class="badge">실시간 멀티 · 대표작</span></div>
-    <p class="role"><b>클라이언트 시스템 파트</b> — 실시간 멀티플레이 세션 · 티어/LP 정산 · 슬롯 엔진 안정화 · 카드 시스템</p>
+    <div class="pt"><h3>우드득 (Wooduduk)</h3><span class="per">2026.06 ~ 진행 중 · 팀 5명</span><span class="badge">실시간 멀티 · 대표작</span></div>
+    <p class="role"><b>클라이언트 시스템 파트</b> — 확장형 카드 시스템 · 자동 검증 체계 · 실시간 멀티 세션 · 슬롯 엔진 안정화</p>
     <ul>
+      <li><b>기존 코어를 한 줄도 고치지 않고</b> 카드 효과 10종 추가 — 훅과 집계 전략을 먼저 정의해 기존 기능 회귀 0건</li>
+      <li>QA 전담 인원이 없는 팀이라 <b>자동 검증 체계를 직접 구축</b> — 48종 케이스 자동 검증, 밸런스 결함까지 사전 발견</li>
       <li>전용 서버 없이 <b>Firebase만으로 최대 4인 실시간 대전</b> — 서버시간 기준 전원 동시 시작, 호스트 마이그레이션</li>
-      <li><b>매칭 시스템</b> · <b>데이터 기반 카드·효과</b> · 기획자용 데이터 파이프라인</li>
+      <li><b>매칭 시스템</b> · 기획자용 데이터 파이프라인 · <b>튜토리얼 UX 개편</b>(필요할 때만 나타나는 상황 인지형 유도)</li>
       <li>재현이 어려운 <b>트러블슈팅 4건을 근본 원인까지</b> 추적해 해결</li>
     </ul>
-    <div class="stat"><span>라이브 코드 <b>183개</b> 중 핵심 시스템 담당</span><span>트러블슈팅 <b>4건</b> 근본 해결</span><span>Unity 6 · Firebase</span></div>
+    <div class="stat"><span>카드 효과 <b>10종</b> 코어 무수정 확장</span><span>자동 검증 <b>48종</b> 통과</span><span>트러블슈팅 <b>4건</b> 근본 해결</span><span>Unity 6 · Firebase</span></div>
   </div>
 
   <div class="proj">
@@ -236,6 +238,14 @@
     <div class="step"><div class="k">상황</div><div class="v">PlayFab 클라우드 세이브로 유저 데이터를 복원하는데, 증강(Augment) 데이터를 <b>id로 매칭</b>해 찾는 구조였습니다.</div></div>
     <div class="step"><div class="k">원인</div><div class="v">클라이언트 데이터(ScriptableObject)와 서버(PlayFab Title Data)의 <b>id가 어긋나면</b> 복원 시 해당 데이터를 못 찾았습니다. <b>.asset 수십 개</b>의 id를 손으로 채우다 보면 어긋나기 쉬웠습니다.</div></div>
     <div class="step"><div class="k">해결</div><div class="v">클라·서버 id를 하나의 기준으로 맞추고, 사람이 실수할 여지를 <b>에디터 스크립트로 id를 자동 부여</b>해 원천 차단했습니다. (본인 담당: PlayFab 서버 데이터 파트)</div></div>
+  </div>
+  <div class="tb" style="margin-top:16px">
+    <h3>🔍 카드를 겹쳐 사면 효과가 폭발하는 구조를 출시 전에 발견 <span style="font-size:12px;color:var(--tx2);font-weight:400">· 우드득</span></h3>
+    <div class="step"><div class="k">상황</div><div class="v">카드 효과 10종을 추가한 뒤, QA 전담 인원이 없어 <b>자동 검증 체계를 만들어</b> 효과를 하나씩 확인하던 중이었습니다.</div></div>
+    <div class="step"><div class="k">발견</div><div class="v">같은 카드를 중복 구매하면 <b>곱으로 집계되는 효과가 지수적으로 증폭</b>됐습니다. 5장이면 배율이 243배, 체온 감소 카드는 사실상 무적이 되는 수준이었습니다.</div></div>
+    <div class="step"><div class="k">왜 안 보였나</div><div class="v">카드 가격이 구매마다 크게 올라 <b>가격이 중첩을 대신 막고 있었습니다.</b> 테스트로 가격을 낮추자 즉시 재현됐습니다 — 밸런스 조정 한 번이면 드러났을 잠재 결함이었습니다.</div></div>
+    <div class="step"><div class="k">조치</div><div class="v">카드 18종 전체의 1~5장 중첩 결과를 계산해 문서로 정리하고, <b>구매 시점 한 곳만 수정하면 되는 상한 방식</b>을 제안했습니다. 상한 수치는 기획 결정 사항으로 남겨 팀에 넘겼습니다.</div></div>
+    <div class="step"><div class="k">배움</div><div class="v">검증 체계는 버그만 잡는 도구가 아니라 <b>설계·밸런스 결함까지 드러냅니다.</b> 그리고 "지금 문제가 없다"가 "구조가 안전하다"는 뜻은 아니라는 걸 배웠습니다.</div></div>
   </div>
 </div></section>
 
